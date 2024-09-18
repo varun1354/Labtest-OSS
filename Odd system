@@ -1,0 +1,39 @@
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+
+aqi_reading = np.arange(-2,2*np.pi,2*np.pi/1440)
+
+y = 1+np.sin(aqi_reading)
+
+plt.plot(aqi_reading,y)
+
+
+def at_noise(u):
+
+    noise = np.random.rand(len(u))
+
+    return u+(noise*100)
+
+
+y = at_noise(y)
+
+plt.plot(y)
+
+
+from scipy import signal
+
+
+def avg(u):
+
+    AQI_avg = np.split(0,24)
+
+    
+
+    avg =np.mean (AQI_avg ,axis =1)
+
+    return avg
+
+
+plt.plot(aqi_reading)
